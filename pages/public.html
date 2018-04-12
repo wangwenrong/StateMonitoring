@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>状态记录仪</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src='../js/jquery.min.js'></script>
+    <script src='../js/bootstrap.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src='../js/typeahead.js'></script>
+    <script src='../js/art.js'></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <header class="flex vertical">
+        <div class="header-left flex vertical">
+            <img src="../image/logo.png" alt="logo" class='logo'>
+            <p href="#">状态记录仪报警平台</p>
+        </div>
+        <div class="flexOne"></div>
+        <div class="header-right flex vertical">
+            <img src="../image/logo.png" alt="..." class="img-circle user">
+            <p>长久物流</p>
+        </div>
+    </header>
+    <nav class="navbar navbar-default">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </nav>
+    <div class="wrap">
+        <div class="wrap-inner">
+            <ol class="breadcrumb">
+                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+                <!-- <span class="glyphicon glyphicon-warning-sign" aria-hidden="true" ></span> -->
+                <li class='classOne'>异常报警</li>
+                <li class="classTwo active">拆除</li>
+            </ol>
+            <form class="form-inline">
+                <div class="row" style='margin:0 0 20px 0'>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="form-group flex">
+                            <label for="exampleInputName2">设备编号：</label>
+                            <div class="u-posRelative" style="width:60%; display: inline-block;">
+                                <!-- <input class="Typeahead-hint" type="text" tabindex="-1" readonly> -->
+                                <input style="width:100%" class="form-control devNo Typeahead-input" id="demo-input" type="text" name="q" placeholder="请输入设备号">
+                            </div>
+                            <!-- <input type="text" class="form-control devNo" style="width:120px"> -->
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="form-group flex">
+                            <label for="exampleInputEmail2">上报日期：</label>
+                            <input type="date" class="form-control todo-taskbody-due" style="width:60%">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="form-group flex">
+                            <label for="exampleInputEmail2">报警地点：</label>
+                            <input type="text" class="form-control" style="width:68%">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="form-group flex NXEW">
+                            <label for="exampleInputEmail2">N</label>
+                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail2">X</label>
+                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail2">E</label>
+                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail2">W</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="form-group flex">
+                            <label for="exampleInputEmail2">方向：</label>
+                            <select class="form-control">
+                                <option>不限</option>
+                                <option>东北经</option>
+                                <option>南北纬</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn  btn-primary active" style="margin-left:30px">查询</button>
+                    </div>
+                </div>
+            </form>
+            <button type="submit" class="btn btn-primary" style="margin:10px 0 10px 20px;">导出</button>
+            <div class='wrap-table'>
+                <table class="table table-bordered" data-toggle="table">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>设备号</th>
+                            <th>上报时间</th>
+                            <th>位置</th>
+                            <th>经纬度</th>
+                        </tr>
+                    </thead>
+                    <tbody class='table-info'>
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation" class="flex column">
+                <ul class="pagination">
+                    <!-- <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li> -->
+                    <li class="disabled">
+                        <span>
+                            <span aria-hidden="true">&laquo;</span>
+                        </span>
+                    </li>
+                    <li class="active">
+                        <span>1
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <footer class="bs-docs-footer">
+        <div class="container">
+            <p>京公网安备 11000002000088号</p>
+        </div>
+    </footer>
+    <!-- 菜单 -->
+    <script id="nav" type="text/html">
+        {{each menuelist}}
+        <li {{if $value.submenu}} class="dropdown" {{/if}}>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                {{$value.menu}}
+                {{if $value.submenu}}
+                <span class="caret"></span>
+                {{/if}}
+            </a>
+            {{if $value.submenu}}
+            <ul class="dropdown-menu">
+                {{each $value.submenu}}
+                <li>
+                    <a href="#">{{$value}}</a>
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+    </script>
+    <!-- 获取表格数据 -->
+    <!-- <script id="test" type="text/html">
+        {{each list}}
+            <tr>
+                <td>{{$value.no}}</td>
+                <td><a href="#" >{{$value.devNo}}</a></td>
+                <td>{{$value.date}}</td>
+                <td>{{$value.addr}}</td>
+                <td>{{$value.NSEW}}</td>
+            </tr>
+        {{/each}}
+    </script> -->
+        <!-- js交互 -->
+    <script>
+        // artjs获取数据
+        var data = {
+            menuelist: [
+                { id: '1', menu: '全图监控' },
+                { id: '2', menu: '设备管理' },
+                { id: '3', menu: '异常报警', submenu: ['拆除', '透光', '倾角过大', '电量低', '温湿度', '三轴加速度'] },
+                { id: '4', menu: '常规数据', submenu: ['位置', '温湿度', '电量低', '重启次数', '信号强度'] }
+            ],
+            list: [
+                { id: '1', no: '001', devNo: 'jkhsdjkjas', date: '2018年4月10日', addr: '北京市朝阳区北苑大酒店1', NSEW: '180,198' },
+                { id: '2', no: '002', devNo: 'weihdsfjk', date: '2018年4月11日', addr: '北京市朝阳区北苑大酒店2', NSEW: '180,198' },
+                { id: '3', no: '003', devNo: 'sdmikwhqejkf', date: '2018年4月12日', addr: '北京市朝阳区北苑大酒店3', NSEW: '180,198' },
+                { id: '4', no: '004', devNo: 'jkhsdjkjas', date: '2018年4月13日', addr: '北京市朝阳区北苑大酒店4', NSEW: '180,198' },
+                { id: '5', no: '005', devNo: 'weikhdsf', date: '2018年4月14日', addr: '北京市朝阳区北苑大酒店5', NSEW: '180,198' },
+                { id: '6', no: '006', devNo: 'jkhsdjkjas', date: '2018年4月15日', addr: '北京市朝阳区北苑大酒店6', NSEW: '180,198' },
+                { id: '7', no: '007', devNo: 'wekjnkjtrewg', date: '2018年4月16日', addr: '北京市朝阳区北苑大酒店7', NSEW: '180,198' },
+            ]
+        }
+        var alarmhtml = template("nav", data);
+        $('.nav').html(alarmhtml);
+        // var html = template("test", data);
+        // $('.table-info').html(html);
+        // 面包屑
+        $('.dropdown-menu>li>a').click(function () {
+            var otext=$(this).parents('.dropdown').find('.dropdown-toggle').text();
+            var text = $(this).text();
+            $('.classOne').text(otext);
+            $('.classTwo').text(text);
+        })
+
+        $.get('main.html', function (main) {
+            var render = template.compile(main);
+            var str = render(data);
+            $('.table-info').html(str);
+        })
+    </script>
+</body>
+
+</html>
