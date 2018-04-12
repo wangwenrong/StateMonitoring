@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="col-md-3 col-sm-3">
-                <div class="form-group flex" style="width:100%">
+                <div class="form-group flex" style=" width:100%">
                     <label for="exampleInputEmail2">报警地点：</label>
                     <input type="text" class="form-control" style="width:75%">
                 </div>
@@ -35,12 +35,10 @@
             </div>
             <div class="col-md-2 col-sm-2">
                 <div class="form-group flex">
-                    <label for="exampleInputEmail2">方向：</label>
-                    <select class="form-control">
-                        <option>不限</option>
-                        <option>东北经</option>
-                        <option>南北纬</option>
-                    </select>
+                    <label for="exampleInputName2">倾斜度：</label>
+                    <div class="u-posRelative" style="width:50%; display: inline-block;">
+                        <input style="width:100%" class="form-control devNo Typeahead-input" id="demo-input" type="text" name="q" placeholder="请输入设备号">
+                    </div>
                 </div>
                 <button type="submit" class="btn  btn-primary active" style="float:right">查询</button>
             </div>
@@ -56,7 +54,7 @@
                     <th>上报时间</th>
                     <th>位置</th>
                     <th>经纬度</th>
-                    <th>方向</th>
+                    <th>倾斜角度</th>
                 </tr>
             </thead>
             <tbody class='table-info'>

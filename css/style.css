@@ -1,6 +1,6 @@
 html,body{
     width: 100%;
-    
+    min-height: 100%;
 }
 body {
     background-color: #fff;
@@ -20,6 +20,10 @@ a{
 }
 .column{
     justify-content: center;
+}
+.HW{
+    align-items: center;
+    justify-content: center;    
 }
 /* login.html */
   .form-signin {
@@ -58,7 +62,7 @@ a{
     z-index: 2;
   }
 
-  .form-signin input[type="email"] {
+  .form-signin input[type="text"] {
     margin-bottom: 20px;
   }
 
@@ -119,18 +123,14 @@ header p{
 
 /* footer */
 footer{
-    margin-top: 0 !important;
     height: 40px;
     line-height: 40px;
-    padding: 0 !important;
-}
-.bs-docs-footer{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-top: 100px;
-    color: #99979c;
     text-align: center;
     background-color: #2a2730;
+}
+footer p{
+    margin: 0 !important;
+    line-height: 40px;
 }
 .wrap{
     border: 1px solid #ddd;
@@ -182,4 +182,11 @@ footer{
 .map-wrapinner,#allmap{
     height: 100%;
     width: 100%;
+}
+/* 弹窗 */
+.modal-body>div{
+    height: 50px;
+}
+.modal-body>div>p{
+    margin: 0;
 }
