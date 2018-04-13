@@ -1,8 +1,0 @@
-[
-        {"iccid":"1","matchCount":"数据1"},
-        {"iccid":"2","matchCount":"数据222"},
-        {"iccid":"3","matchCount":"数据333"},
-        {"iccid":"4","matchCount":"数据444"},
-        {"iccid":"5","matchCount":"数据555"},
-        {"iccid":"6","matchCount":"数据666"}
-   ]

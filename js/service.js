@@ -1,7 +1,6 @@
-var BASEURL = 'http://gis.cloud.rtzltech.cn:8010/monitoringserver/';
-project: 'http://app.test.cloud.rtzltech.cn/monitoringserver/',
+// var BASEURL = 'http://gis.cloud.rtzltech.cn:8010/monitoringserver/';
 
-function getData(url, params, callback, errorCallBack) {
+function getdata(url, params, callback, errorCallBack) {
     $.ajax({
         type: 'POST',
         url: BASEURL + url,
@@ -16,20 +15,20 @@ function getData(url, params, callback, errorCallBack) {
             return callback(data);
         },
         error: function (error) {
+            if (error.message === 'Network Error') {
+                alert('网络错误');
+            } else {
+                alert(error.message);
+            }
             if (errorCallBack) {
-                if (error.message === 'Network Error') {
-                    alert('网络错误');
-                } else {
-                    alert(error.message);
-                }
-                return errorCallBack(error);
+                errorCallBack(error);
             }
         }
     })
 }
-function login(params, callback) {
-    getData('login', params, callback);
+function login(params, callback, errorCallBack) {
+    getdata('login', params, callback, errorCallBack);
 }
 function getmap(params, callback, errorCallBack) {
-    getData('track/posDevDataQuery.action', params, callback, errorCallBack);
+    getdata('track/posDevDataQuery.action', params, callback, errorCallBack);
 }

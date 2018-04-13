@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
   <meta charset="UTF-8">
@@ -44,24 +44,32 @@
           <input type="checkbox" value="remember-me"> 自动登录
         </label>
       </div>
-      <button id='loginbtn' class="btn btn-lg btn-primary btn-block">立即登录</button>
+      <button type='button' id='loginbtn' class="btn btn-lg btn-primary btn-block">立即登录</button>
     </form>
   </div>
   <script>
-    var userInfo = {
-      loginname: 'obdtest',
-      pwd: '1234'
-    }
     $('#loginbtn').click(function () {
-      location='global-monitor.html'
-      console.log('saf')
-      // login(userInfo, function (data) {
-      //   console.log(data)
-      //   location='global-monitor.html'
-      //   // if (data && '0' == data.retcode) {
-          
-      //   // }
-      // })
+      var userInfo = {
+        loginname: $('#loginname').val(),
+        pwd: $('#inputPassword').val()
+      }
+      if (userInfo.loginname == '') {
+        alert('账号不能为空');
+        return;
+      }
+      if (userInfo.pwd == '') {
+        alert('密码不能为空')
+        return;
+      }
+      // location = 'globalmonitor.html'
+      login(userInfo, function (data) {
+        console.log(data)
+        if (data && '0' == data.retcode) {
+          location = 'globalmonitor.html'
+        } else {
+          alert(data.retmsg)
+        }
+      })
     })
   </script>
 </body>

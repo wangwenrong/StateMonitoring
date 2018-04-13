@@ -34,12 +34,6 @@
                 </div>
             </div>
             <div class="col-md-2 col-sm-2">
-                <div class="form-group flex">
-                    <label for="exampleInputName2">倾斜度：</label>
-                    <div class="u-posRelative" style="width:50%; display: inline-block;">
-                        <input style="width:100%" class="form-control devNo Typeahead-input" id="demo-input" type="text" name="q" placeholder="请输入设备号">
-                    </div>
-                </div>
                 <button type="submit" class="btn  btn-primary active" style="float:right">查询</button>
             </div>
         </div>
@@ -54,11 +48,10 @@
                     <th>上报时间</th>
                     <th>位置</th>
                     <th>经纬度</th>
-                    <th>倾斜角度</th>
                 </tr>
             </thead>
             <tbody class='table-info'>
-                {{each list}}
+                {{each dismantlelist}}
                 <tr>
                     <td>{{$value.no}}</td>
                     <td>
@@ -67,7 +60,6 @@
                     <td>{{$value.date}}</td>
                     <td>{{$value.addr}}</td>
                     <td>{{$value.NSEW}}</td>
-                    <td>{{$value.direction}}</td>
                 </tr>
                 {{/each}}
             </tbody>
